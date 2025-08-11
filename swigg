@@ -1,0 +1,358 @@
+keyword:extern,always global
+//websites
+w3 schools
+javatpoint
+tutorialspoint.com/c operator
+geeksforgeeks
+***prepinsta**-interview questions
+studytonight
+codeforwin
+stackoverflow
+//onlinetools
+gdb online compiler
+programiz online compiler
+python tutor.com-visualize execution
+//variables
+local-inside fun
+global-outside fun
+static-keyword:static"it retains its value between multiple function calls"
+automatic-keyword:auto,its local
+external-keyword:extern,always global
+//data types
+1.basic/premitive data types
+-holds single value
+char-1 byte
+short int-2 byte
+int-4 bytes
+long int-8 bytes
+float-4 bytes
+double-8 bytes
+long double-16 bytes
+non-premitive /derived data type holds multiple values
+1.string
+2.array
+double pointer-8 bytes
+*user defined data types
+structure-struct
+union
+enumeration-enum
+//constant
+const
+*programm 
+#include<stdio.h>
+int main()
+{
+	const int a=100;
+	a=200;//error
+	printf("%d",a);
+	return 0;
+}
+**programm of static**
+#include<stdio.h>
+void gsss()
+{
+    //fun defn
+    static int a=10,b=20;
+    a=a+1,b=b+1;
+    printf("%d\t%d\t",a,b);
+}
+int main()
+{
+	gsss();//fun call
+	gsss();
+	gsss();
+	return 0;
+}
+//**external extern variable
+#include<stdio.h>
+#include"sinchu.h"
+int main()
+{
+  extern int cloud;
+  printf("%d",cloud);
+}
+**programm**
+#include<stdio.h>
+int main()
+{
+ int hours;
+ float parking_fee;
+ printf("enter hours:");
+ scanf("%d",&hours);
+ if(hours<=2)
+ {
+     parking_fee=20;
+     
+ }
+ else
+ {
+     parking_fee=20+(hours-2)*10;
+ }
+ printf("%.2f",parking_fee);
+ 
+ }
+ **the c concept details**
+ w3school.com
+ //casses for variable names
+ basmathi rice x
+ pink salt x
+ brown sugar x
+ // correct way
+ 1.camel case
+ basmathiRice
+ pinkSalt
+ brownSugar
+ 2.pascal case
+ BasmathiRice
+ PinkSalt
+ BrownSugar
+ 3.snake case
+ basmathi_rice_jayapur
+ pink_salt_april
+ BROWN_SUGAR_RESTOCK
+ 4.kebab case
+ basmathi-rice-jaypur
+ pink-salt-april
+ brown-sugar-april;
+ https://www.swiggy.com/support/issues/instamart_onboarding(snac case)
+ https://www.swiggy.com/support/issues/partner-onboarding(its kabbab case we used in url name)
+ //atm pin
+ #include <stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+int main()
+{
+    int correct_pin=1234;
+    int userpin,attempts=0;
+    while(1)
+    {
+    if(attempts==3)
+    {
+        
+        sleep(10);
+        attempts=0;
+    }
+    while(attempts<3)
+    {
+        
+      printf("enter the pin");
+      scanf("%d",&userpin);
+      if(userpin==correct_pin)
+      {
+      printf("access granted");
+      exit(0);
+    }
+    else
+    {
+        printf("incorrect pin,try again");
+          attempts++;
+    }}
+    printf("account locked\n");
+    
+    
+    }
+}
+
+
+//condition of 4digits
+#include <stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+int main()
+{
+    int correct_pin=1234;
+    int userpin,attempts=0,i;
+    while(1)
+    {
+    if(attempts==3)
+    {
+        
+        sleep(10);
+        attempts=0;
+    }
+    while(attempts<3)
+    {
+        
+      printf("enter the pin");
+      scanf("%d",&userpin);
+      if(userpin>=999&&userpin<=9999)
+      {
+      if(userpin==correct_pin)
+      {
+      printf("access granted");
+      exit(0);
+    }
+    else
+    {
+        printf("incorrect pin,try again");
+          attempts++;
+    }}
+    else
+    {
+        printf("enter the 4 digits");
+    }
+    printf("account locked\n");
+    
+    
+    }
+    }
+}
+
+//atm cash withdrawal
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+ float account_balance=5000;
+ float amount;
+ printf("enter the amount:");
+ scanf("%f",&amount);
+ if(fmod(amount,100.0f)!=0.0f)
+ {
+     printf("amount should be in multiples of 100");
+ }
+ else if(amount>account_balance)
+ {
+     printf("insuficiant balance");
+}
+else
+{
+    printf("amount is:%.2f\n",amount);
+    printf("balance is:%.2f",account_balance-amount);
+}
+return 0;
+}
+
+//restorent billing system
+#include <stdio.h>
+int main()
+{
+ float bill;
+ printf("enter the bill:");
+ scanf("%f",&bill);
+ if(bill>100.0f)
+ {
+     printf("bill with discount:%.2f",bill*0.9);
+     
+ }
+ else
+ {
+     printf("bill is:%.2f",bill);
+ }
+}
+
+//online examination system
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ char password[20]="exam123";
+ char user_password[20];
+ printf("enter the password:");
+ scanf("%s",user_password);
+ if(strcmp(password,user_password)==0)
+ {
+     printf("acces granted start your exam");
+     
+ }
+ else
+ {
+     printf("access denied!incorrect password");
+ }
+}
+
+//railway ticket booking system
+#include <stdio.h>
+int main()
+{
+ int available_seats=5;
+ int requested_seats;
+ printf("enter the seats:");
+ scanf("%d",&requested_seats);
+ if(requested_seats>available_seats)
+ {
+     printf("sorry only %d seats are available",available_seats);
+     
+ }
+ else
+ {
+     printf("booking successfully\n");
+     printf("remaining seats:%d",available_seats-requested_seats);
+ }
+}
+
+
+//count of * and # in string
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+ char s[50]; int count_star=0,count_hash=0;
+ printf("enter the string:");
+ scanf("%s",s);
+ for(int i=0;i<strlen(s);i++)
+ {
+     if(s[i]=='*')
+     count_star++;
+     if(s[i]=='#')
+     count_hash++;
+ }
+     if(count_star>count_hash)
+     printf("+1");
+     else if(count_hash>count_star)
+     printf("-1");
+     else
+     printf("0:valid");
+}
+    
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    float balance=5000.0f;
+    float deposit;
+    float withdraw;
+    int choice;
+    printf("Automated bank system\n");
+    printf("1.check balance:\n");
+    printf("2.deposit:\n");
+    printf("3.withdraw:\n");
+    printf("4.exit:\n");
+    
+    while(1)
+    {
+        printf("enter choice:\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: 
+               printf("current balance:%.2f\n",balance);
+            break;
+            case 2:
+                 printf("enter the amount to be deposit:\n");
+                 scanf("%f",&deposit);
+                 balance=balance+deposit;
+                 printf("new balanceis%.2f:\n",balance);
+                 break;
+            case 3:
+                printf("enter the amount to bt withdraw:\n");
+                scanf("%f",withdraw);
+            if(withdraw<=balance)
+            {
+               balance=balance-withdraw;
+               printf("balance is:%.2f\n",balance);
+            }
+            else
+               printf("insufffcuint balance\n");
+            break;
+           
+            case 4:
+                printf("thank you for using SBI\n");
+                exit(0);
+            default:
+                printf("invalid choice\n");
+        }
+    }
+
+  
+}
